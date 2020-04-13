@@ -42,7 +42,8 @@ class Weather
     }
 
     public function getForecastsWeather($city, $format = 'json')
-    {return $this->getWeather($city, 'all', $format);
+    {
+        return $this->getWeather($city, 'all', $format);
     }
 
     public function getWeather($city, $type = 'base', $format = 'json')
