@@ -5,10 +5,10 @@ namespace Jinva\Weather\Tests;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Psr7\Response;
-use Mockery\Matcher\AnyArgs;
 use Jinva\Weather\Exceptions\HttpException;
 use Jinva\Weather\Exceptions\InvalidArgumentException;
 use Jinva\Weather\Weather;
+use Mockery\Matcher\AnyArgs;
 use PHPUnit\Framework\TestCase;
 
 class WeatherTest extends TestCase
@@ -20,9 +20,9 @@ class WeatherTest extends TestCase
         $client = \Mockery::mock(Client::class);
         $client->allows()->get('https://restapi.amap.com/v3/weather/weatherInfo', [
             'query' => [
-                'key' => 'mock-key',
-                'city' => '深圳',
-                'output' => 'json',
+                'key'        => 'mock-key',
+                'city'       => '深圳',
+                'output'     => 'json',
                 'extensions' => 'base',
             ],
         ])->andReturn($response);
@@ -37,10 +37,10 @@ class WeatherTest extends TestCase
         $client = \Mockery::mock(Client::class);
         $client->allows()->get('https://restapi.amap.com/v3/weather/weatherInfo', [
             'query' => [
-                'key' => 'mock-key',
-                'city' => '深圳',
+                'key'        => 'mock-key',
+                'city'       => '深圳',
                 'extensions' => 'all',
-                'output' => 'xml',
+                'output'     => 'xml',
             ],
         ])->andReturn($response);
 
